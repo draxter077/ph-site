@@ -127,10 +127,8 @@ window.construct = function construct(p){
             let paths = window.location.href.split("br/")[1].split("/")
             //if(paths[0] == "teste"){}
             root.innerHTML = paths
-            console.log("running paths")
         }
         else{
-            console.log("running main")
             root.appendChild(main())
         }
     }
