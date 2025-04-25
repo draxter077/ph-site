@@ -127,11 +127,9 @@ window.construct = function construct(p){
             let paths = window.location.href.split("br/")[1].split("/")
             //if(paths[0] == "teste"){}
             root.innerHTML = paths
-            alert(paths)
         }
         else{
             root.appendChild(main())
-            alert("main")
         }
     }
 }
