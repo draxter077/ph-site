@@ -1,0 +1,18 @@
+import logo from "./logo/main.js"
+import text from "./text/main.js"
+
+export default function about(){
+    let style = `
+        {
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content:space-between;
+            width:90%;
+        }`
+
+    const about = cE("div", style)
+    about.appendChild(logo())
+    about.appendChild(text())
+    return(about)
+}
