@@ -6,7 +6,8 @@ export default function logo(){
             position:relative;
             width:30%;
             aspect-ratio:1;
-        }`
+        }
+        :responsive{width:50%;}`
 
     const logo = cE("div", style)
     logo.appendChild(img())

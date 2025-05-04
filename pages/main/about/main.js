@@ -9,7 +9,8 @@ export default function about(){
             align-items:center;
             justify-content:space-evenly;
             width:90%;
-        }`
+        }
+        :responsive{flex-direction:column;}`
 
     const about = cE("div", style)
     about.appendChild(logo())
