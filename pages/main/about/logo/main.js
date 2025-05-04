@@ -4,7 +4,7 @@ export default function logo(){
     let style = `
         {
             position:relative;
-            width:40%;
+            width:30%;
             aspect-ratio:1;
         }`
 

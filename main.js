@@ -182,9 +182,13 @@ cE("root", `html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquo
     	--transitionTime:0.5s;
     	--animationDelay0:0s;
     }
+    @font-face{
+        font-family:"Garet";
+        src:url("./assets/font/Garet-Book.otf");
+    }
     body{
     	box-sizing:border-box;
-    	font-family:system-ui;
+    	font-family:"Garet";
     	background:var(--colorWhite);
     	cursor:default;
 	    user-select:none;

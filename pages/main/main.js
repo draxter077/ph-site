@@ -1,5 +1,4 @@
 import about from "./about/main.js"
-import works from "./works/main.js"
 
 export default function main(){
     let style = `
@@ -14,6 +13,5 @@ export default function main(){
 
     const main = cE("div", style)
     main.appendChild(about())
-    main.appendChild(works())
     return(main)
 }
