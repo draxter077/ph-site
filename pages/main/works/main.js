@@ -1,3 +1,6 @@
+import title from "./title/main.js"
+import links from "./links/main.js"
+
 export default function works(){
     let style = `
         {
@@ -9,5 +12,7 @@ export default function works(){
         }`
     
     const works = cE("div", style)
+    works.appendChild(title())
+    works.appendChild(links())
     return(works)
 }
