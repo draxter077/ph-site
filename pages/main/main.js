@@ -1,4 +1,5 @@
-import about from "./about/main.js"
+import home from "./home/main.js"
+import contact from "./contact/main.js"
 
 export default function main(){
     let style = `
@@ -8,11 +9,11 @@ export default function main(){
             justify-content:center;
             align-items:center;
             width:100%;
-            height:100dvh;
 	        overflow:hidden;
         }`
 
     const main = cE("div", style)
-    main.appendChild(about())
+    main.appendChild(home())
+    main.appendChild(contact())
     return(main)
 }
