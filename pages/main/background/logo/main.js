@@ -29,10 +29,14 @@ export default function logo(){
             let relativeX = (x - (logoLeft + logoWidth/2))/(width - (logoLeft + logoWidth/2))/4
             let relativeY = (y - (logoTop + logoHeight/2))/(height - (logoTop + logoHeight/2))/4
 
-            logo.style.transform = `translate(${relativeX*100}%, ${relativeY*100}%)`
-            logo.style.transform += `rotate(${-2*Math.atan(relativeY*(logoTop + logoHeight/2)/relativeX*(logoLeft + logoWidth/2))}deg)`
-
-            if(window.scrollY >= height/2){window.removeEventListener("mousemove", a); logo.style.transform = "translate(0%,0%)"}
+            if(window.scrollY < height/10){
+                logo.style.transform = `translate(${relativeX*100}%, ${relativeY*100}%)`
+                logo.style.transform += `rotate(${-2*Math.atan(relativeY*(logoTop + logoHeight/2)/relativeX*(logoLeft + logoWidth/2))}deg)`
+            }
+            else{
+                logo.style.transform = `translate(0%, 0%)`
+                logo.style.transform += `rotate(0deg)`
+            }
         }
     )
     return(logo)

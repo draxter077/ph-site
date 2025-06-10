@@ -7,8 +7,8 @@ export default function contact(){
             display:flex;
             flex-direction:column;
             align-items:center;
-            justify-content:space-around;
-            height:100dvh;
+            justify-content:space-evenly;
+            height:100vh;
             width:100%;
             background:var(--colorBlue);
         }`

@@ -3,6 +3,9 @@ export default function text(t){
         {
             font-size:22px;
             color:var(--colorWhite);
+        }
+        :responsive{
+            font-size:17px;
         }`
 
     const text = cE("div", style)

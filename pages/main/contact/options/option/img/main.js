@@ -4,6 +4,9 @@ export default function img(src){
             width:20%;
             filter:invert(1);
             margin:0px 0px 20px 0px;
+        }
+        :responsive{
+            width:20%;
         }`
 
     const img = cE("img", style)
