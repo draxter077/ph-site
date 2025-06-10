@@ -1,5 +1,6 @@
 import background from "./background/main.js"
 import home from "./home/main.js"
+import services from "./services/main.js"
 import contact from "./contact/main.js"
 
 export default function main(){
@@ -16,6 +17,7 @@ export default function main(){
     const main = cE("div", style)
     main.appendChild(background())
     main.appendChild(home())
+    main.appendChild(services())
     main.appendChild(contact())
     return(main)
 }

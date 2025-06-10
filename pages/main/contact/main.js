@@ -10,7 +10,11 @@ export default function contact(){
             justify-content:space-evenly;
             height:100vh;
             width:100%;
-            background:var(--colorBlue);
+            box-shadow:0px 0px 5px 5px var(--colorWhite);
+            background:var(--colorWhite);
+        }
+        :responsive{
+            box-shadow:0px 0px 3px 3px var(--colorWhite);
         }`
 
     const contact = cE("div", style)

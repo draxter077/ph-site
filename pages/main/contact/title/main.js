@@ -2,9 +2,9 @@ export default function title(){
     let style = `
         {
             font-size:22px;
-            color:var(--colorWhite);
+            color:var(--colorBlue);
             padding:5px 10px;
-            border-bottom:1px solid var(--colorWhite);
+            border-bottom:1px solid var(--colorBlue);
         }`
 
     const title  = cE("div", style)

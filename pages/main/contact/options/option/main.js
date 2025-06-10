@@ -15,15 +15,13 @@ export default function option(src, t, disclaimer, f){
             aspect-ratio:1;
             border-radius:15px;
             cursor:pointer;
-            border:1px solid var(--colorBlue);
+            background:var(--colorBlue);
             overflow:hidden;
             transition:all 0.5s;
         }
-        :hover{
-            border:1px solid var(--colorWhite);
-        }
         :responsive{
-            width:90%;
+            width:48%;
+            margin:0px 0px 10px 0px;
         }`
 
     const option = cE("div", style)

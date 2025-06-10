@@ -11,8 +11,8 @@ export default function options(){
             width:70%;
         }
         :responsive{
-            width:50%;
-            flex-direction:column;
+            width:90%;
+            justify-content:space-around;
         }`
 
     const options = cE("div", style)
