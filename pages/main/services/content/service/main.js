@@ -7,10 +7,16 @@ export default function service(n, src, t){
             display:flex;
             flex-direction:row;
             align-items:center;
-            margin:0px 0px 0px ${75*n}px;
+            margin:0px 0px 10px ${75*n}px;
+            background:var(--colorBlue);
+            padding:10px 15px;
+            border-radius:5px;
+            opacity:0;
+            transform:translateX(100%);
+            transition:all 0.5s;
         }
         :responsive{
-            margin:0px;
+            margin:0px 0px 10px 0px;
         }`
 
     const service = cE("div", style)

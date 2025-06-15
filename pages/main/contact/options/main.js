@@ -5,19 +5,18 @@ export default function options(){
         {
             display:flex;
             flex-direction:row;
-            justify-content:space-between;
+            justify-content:space-around;
             align-items:center;
             flex-wrap:wrap;
             width:70%;
         }
         :responsive{
             width:90%;
-            justify-content:space-around;
         }`
 
     const options = cE("div", style)
     options.appendChild(option("./assets/email.png", "contato@ph.net.br", "Copiado para a sua área de transferência!", () => navigator.clipboard.writeText("contato@ph.net.br")))
-    options.appendChild(option("./assets/whatsapp.png", "(41) 99171-8360", "Aberto em outra guia", () => window.open("https://wa.me/+55041991718360", "_blank")))
-    options.appendChild(option("./assets/instagram.png", "@phWebSoftware", "Aberto em outra guia", () => window.open("https://www.instagram.com/philippeprestes", "_blank")))
+    //options.appendChild(option("./assets/whatsapp.png", "(41) 99171-8360", "Aberto em outra guia", () => window.open("https://wa.me/+55041991718360", "_blank")))
+    //options.appendChild(option("./assets/instagram.png", "@phWebSoftware", "Aberto em outra guia", () => window.open("https://www.instagram.com/philippeprestes", "_blank")))
     return(options)
 }

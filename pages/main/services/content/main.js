@@ -8,6 +8,7 @@ export default function content(){
             justify-content:space-around;
             width:90%;
             height:80%;
+            margin:40px 0px 0px 0px;
         }`
     
     const content = cE("div", style)

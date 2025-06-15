@@ -10,8 +10,9 @@ export default function contact(){
             justify-content:space-evenly;
             height:100vh;
             width:100%;
-            box-shadow:0px 0px 5px 5px var(--colorWhite);
-            background:var(--colorWhite);
+            margin:20vh 0px 0px 0px;
+            box-shadow:0px 0px 5px 5px var(--colorBlue);
+            background:var(--colorBlue);
         }
         :responsive{
             box-shadow:0px 0px 3px 3px var(--colorWhite);

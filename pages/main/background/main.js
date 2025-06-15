@@ -18,7 +18,7 @@ export default function background(){
             animation:minimizing 1s linear 0s 1 forwards;
             animation-timeline:scroll();
             animation-range-start:0px;
-            animation-range-end:100vh;
+            animation-range-end:50vh;
         }
         @keyframes minimizing{
             0%[transform:scale(1);opacity:1]

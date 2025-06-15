@@ -15,7 +15,7 @@ export default function option(src, t, disclaimer, f){
             aspect-ratio:1;
             border-radius:15px;
             cursor:pointer;
-            background:var(--colorBlue);
+            border:2px solid var(--colorWhite);
             overflow:hidden;
             transition:all 0.5s;
         }
@@ -30,7 +30,7 @@ export default function option(src, t, disclaimer, f){
     option.appendChild(back(disclaimer))
     option.addEventListener(
         "click",
-        function a(){
+        async function a(){
             if(option.style.transform == "rotate3d(0, 1, 0, 180deg)"){
                 option.style.transform = "rotate3d(0, 1, 0, 0deg)"
                 option.children[2].style.transform = "rotate3d(0, 1, 0, 180deg)"
@@ -41,6 +41,10 @@ export default function option(src, t, disclaimer, f){
                 option.children[2].style.transform = "rotate3d(0, 1, 0, -180deg)"
                 option.children[2].style.opacity = 1
                 f()
+                await new Promise(resolve => setTimeout(resolve, 5000))
+                option.style.transform = "rotate3d(0, 1, 0, 0deg)"
+                option.children[2].style.transform = "rotate3d(0, 1, 0, 180deg)"
+                option.children[2].style.opacity = 0
             }
         }
     )
