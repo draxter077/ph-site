@@ -9,12 +9,8 @@ export default function about(){
             justify-content:space-around;
             align-items:center;
             width:100%;
-            box-shadow:0px 0px 5px 5px var(--colorBlue);
             background:var(--colorBlue);
             padding:10vh;
-        }
-        :responsive{
-            box-shadow:0px 0px 3px 3px var(--colorBlue);
         }`
 
     const about = cE("div", style)
