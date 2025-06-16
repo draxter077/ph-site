@@ -1,37 +1,35 @@
 import title from "./title/main.js"
-import content from "./content/main.js"
+import options from "./options/main.js"
 
-export default function services(){
+export default function works(){
     let style = `
         {
             display:flex;
             flex-direction:column;
-            justify-content:space-around;
             align-items:center;
-            width:100%;
             margin:20vh 0px 0px 0px;
+            width:90%;
             opacity:0;
             transition:opacity 0.5s;
         }`
 
-    const services = cE("div", style)
-    services.appendChild(title())
-    services.appendChild(content())
+    const works = cE("div", style)
+    works.appendChild(title())
+    works.appendChild(options())
 
     window.addEventListener(
         "scroll",
         async function a(){
             let scroll = window.scrollY
-            let elementTop = services.offsetTop
+            let elementTop = works.offsetTop
             if(scroll > elementTop/1.5){
-                let svs = services.children[1].children
+                let wks = works.children[1].children
 
-                services.style.opacity = 1
+                works.style.opacity = 1
                 await new Promise(resolve => setTimeout(resolve, 500))
-
-                for(let i = 0; i < svs.length; i++){
-                    svs[i].style.opacity = 1
-                    svs[i].style.transform = "translateX(0%)"
+                
+                for(let i = 0; i < wks.length; i++){
+                    wks[i].style.opacity = 1
                     await new Promise(resolve => setTimeout(resolve, 500))
                 }
                 window.removeEventListener("scroll", a)
@@ -39,5 +37,5 @@ export default function services(){
         }
     )
 
-    return(services)
+    return(works)
 }
