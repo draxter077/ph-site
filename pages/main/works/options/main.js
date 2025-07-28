@@ -14,5 +14,6 @@ export default function options(){
     options.appendChild(option("rgb(0, 0, 0)", "width", "https://www.blankeprestes.adv.br/assets/logo.png"))
     options.appendChild(option("rgb(255,145,77)", "height", "https://gi.ph.net.br/assets/logo.png"))
     options.appendChild(option("rgb(0, 0, 0)", "height", "https://i.ph.net.br/assets/logo.png"))
+    options.appendChild(option("rgb(251, 141, 103)", "height", "https://g8proteinas.com.br/assets/brand/logoname%20horizontal.png"))
     return(options)
 }
