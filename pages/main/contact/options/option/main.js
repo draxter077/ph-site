@@ -19,6 +19,9 @@ export default function option(src, t, disclaimer, f){
             overflow:hidden;
             transition:all 0.5s;
         }
+        :hover{
+            transform:scale(1.05);
+        }
         :responsive{
             width:48%;
             margin:0px 0px 10px 0px;
@@ -28,6 +31,7 @@ export default function option(src, t, disclaimer, f){
     option.appendChild(img(src))
     option.appendChild(text(t))
     option.appendChild(back(disclaimer))
+
     option.addEventListener(
         "click",
         async function a(){
@@ -48,5 +52,6 @@ export default function option(src, t, disclaimer, f){
             }
         }
     )
+
     return(option)
 }
