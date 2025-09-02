@@ -24,8 +24,9 @@ export default function option(c, t, src){
             width:49%;
         }`
 
-    const option = cE("div", style)
+    const option = cE("a", style)
     option.appendChild(img(t, src))
-    option.addEventListener("click", () => window.open(src.split("/assets")[0], "_blank"))
+    option.href = src.split("/assets")[0]
+    option.target = "_blank"
     return(option)
 }
