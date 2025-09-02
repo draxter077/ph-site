@@ -15,7 +15,7 @@ export default function options(){
     options.appendChild(option("rgb(255,145,77)", "height", "https://gi.ph.net.br/assets/logo.png"))
     options.appendChild(option("rgb(0, 0, 0)", "height", "https://i.ph.net.br/assets/logo.png"))
     options.appendChild(option("rgb(251, 141, 103)", "height", "https://g8proteinas.com.br/assets/brand/logoname%20horizontal.png"))
-    options.appendChild(option("rgb(20,30,45);", "width", "https://apostilas.ph.net.br/assets/brand/logoname.png"))
+    options.appendChild(option("rgb(20,30,45);", "width", "https://www.licenos.com.br/assets/brand/logoname.png"))
     options.appendChild(option("rgb(250, 250, 250)", "height", "https://exclusive.ph.net.br/assets/brand/logoname.png"))
     return(options)
 }
