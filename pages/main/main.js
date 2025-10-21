@@ -13,7 +13,6 @@ export default function main(){
             justify-content:center;
             align-items:center;
             width:100%;
-	        overflow:hidden;
         }`
 
     const main = cE("div", style)

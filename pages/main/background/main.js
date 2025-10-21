@@ -15,10 +15,12 @@ export default function background(){
             height:100vh;
             z-index:-1;
             
-            animation:minimizing 1s linear 0s 1 forwards;
+            animation-name:minimizing;
+            animation-direction:forwards;
+            animation-range-start:0%;
+            animation-range-end:50svh;
             animation-timeline:scroll();
-            animation-range-start:0px;
-            animation-range-end:50vh;
+            animation-duration:1ms;
         }
         @keyframes minimizing{
             0%[transform:scale(1);opacity:1]

@@ -11,7 +11,7 @@ export default function option(c, t, src){
             background:${c};
             border-radius:10px;
             margin:10px 0px;
-            padding:10px;
+            padding:1%;
             overflow:hidden;
             cursor:pointer;
             opacity:0;
