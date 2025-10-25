@@ -47,7 +47,7 @@ export default function button(p){
                     await new Promise(r => setTimeout(r, 500))
 
                     // use children[5] for testing
-                    document.body.children[5].children[0].children[0].children[0].children[0].children[0].children[0].click()
+                    document.body.children[4].children[0].children[0].children[0].children[0].children[0].children[0].click()
                 })
                 .catch(response => {
                     console.log(response)
