@@ -1,4 +1,7 @@
 import main from "./pages/main/main.js"
+import client from "./pages/client/main.js"
+import admin from "./pages/admin/main.js"
+import finalizarpagamento from "./pages/finalizarpagamento/main.js"
 
 window.cE = function cE(t, stl){
     function addClass(){
@@ -129,24 +132,39 @@ window.cE = function cE(t, stl){
     return(el)
 }
 
-window.construct = function construct(p){
+window.construct = function construct(d){
     const root = document.getElementById("root")
     root.innerHTML = ""
-    if(p == undefined){
+    if(d == undefined){
         if(window.location.href.split("br/")[1] != undefined && window.location.href.split("br/")[1] != ""){
-            let paths = window.location.href.split("br/")[1].split("/")
-            //if(paths[0] == "teste"){}
-            root.innerHTML = paths
+            let path = window.location.href.split("br/")[1]
+            if(path.split("?")[0] == "finalizarpagamento"){
+                root.appendChild(finalizarpagamento(path.split("?")[1].split("&")[0]))
+            }
+            else if(path == "cliente"){
+                root.appendChild(client())
+            }
+            else if(path == "admin"){
+                root.appendChild(admin())
+            }
+            else{
+                root.appendChild(main())
+            }
         }
         else{
             root.appendChild(main())
         }
     }
+    else{
+        if(d.page == "client"){root.appendChild(client(d.data))}
+        if(d.page == "admin"){root.appendChild(admin(d.data))}
+    }
 }
 
-//window.apiURL = ""
+window.apiURL = "https://ace-chimp-merry.ngrok-free.app/ph"
 
-//axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
+axios.defaults.headers.common["ngrok-skip-browser-warning"] = "69420"
+
 document.getElementsByTagName("head")[0].appendChild(document.createElement("style"))
 cE("root", `html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big, 
     cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,
@@ -176,8 +194,8 @@ cE("root", `html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquo
     blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
     table {border-collapse: collapse;border-spacing: 0;}
     :root{
-    	--colorWhite:rgb(255,255,255);
-    	--colorBlack:rgb(0,0,0);
+    	--colorWhite:rgb(230,230,230);
+    	--colorBlack:rgb(30,30,30);
         --colorBlue:rgb(56,182,255);
     	--transitionTime:0.5s;
     	--animationDelay0:0s;
@@ -213,5 +231,55 @@ cE("root", `html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquo
         padding:0px;
         margin:0px;
     }`)
+
+
+window.stringifyNumber = function stringifyNumber(n){
+    let numberParts = n.toString().split(".")
+    let integerPart = numberParts[0]
+    integerPart = integerPart.split("").reverse().join(""); // 1234 => 4321, para ficar mais fácil adicionar os pontos nas centenas
+    let newIntegerPart = "", newFractionalPart = ""    
+        
+    for(let i = 0; i < integerPart.length; i++){
+        newIntegerPart += integerPart[i]
+        if((i + 1)%3 == 0 && i != integerPart.length - 1 && n > 0){newIntegerPart += "."}
+    }
     
+    if(numberParts.length > 1){ // Verifica se há casa decimal
+        newFractionalPart = (Math.floor(Number("0." + numberParts[1])*100)).toString() // Formata para dois algarismos significativos
+        if(newFractionalPart.length == 1){newFractionalPart = "0" + newFractionalPart} // Adciona o zero a esquerda caso menor do que 10
+    }
+    else{newFractionalPart = "00"} // Não havendo, atribui 00
+        
+    return(`R$ ${newIntegerPart.split("").reverse().join("")},${newFractionalPart}`)
+}
+
+window.datetime = function datetime(ms){
+    const dat = new Date(Number(ms))
+    let day = dat.getDate()
+    let month = dat.getMonth()
+    let year = dat.getFullYear()
+    let newDay, newMonth
+
+    if(day < 10){newDay = "0" + day}
+    else{newDay = day}
+
+    if(month < 9){newMonth = "0" + (month + 1)}
+    else{newMonth = month + 1}
+
+    let date = `${newDay}/${newMonth}/${year}`
+
+    let hour = dat.getHours()
+    let minutes = dat.getMinutes()
+    let newHour, newMinute
+
+    if(hour < 10){newHour = "0" + hour}
+    else{newHour = hour}
+
+    if(minutes < 10){newMinute = "0" + minutes}
+    else{newMinute = minutes}
+
+    let time = `${newHour}:${newMinute}`
+
+    return({date:date, time:time})
+}
 construct()
