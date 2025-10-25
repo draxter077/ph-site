@@ -27,7 +27,7 @@ export default function status(u, ps){
         else if(date-0 - ps[ps.length - 1].time > 7*24*60*60*1000){
             color = "rgb(230,80,0)"
             s = "Bloqueado"
-            d = "O pagamento pendente está vencido. Enquanto não for regularizado, esse produto estará indisponivel"
+            d = "O pagamento pendente venceu, assim sua assinatura foi encerrada. Agradecemos por ter confiado na Ph Web Software! :)"
         }
         else{
             color = "rgb(230,204,57)"
@@ -36,9 +36,16 @@ export default function status(u, ps){
         }
     }
     else{
-        color = "rgb(0,230,10)"
-        s = "Ativo"
-        d = ""
+        if(ps.length == 1 && date-0 - ps[ps.length - 1].time < 24*60*60*1000){
+            color = "rgb(230,204,57)"
+            s = "Em ativação"
+            d = "Em até 24h após a confirmação do pagamento, esse produto estará ativo"
+        }
+        else{
+            color = "rgb(0,230,10)"
+            s = "Ativo"
+            d = "Produto ativo e disponível"
+        }
     }
     
     status.appendChild(item("Domínio", u.domain, color, s, d))

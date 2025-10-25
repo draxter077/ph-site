@@ -13,8 +13,7 @@ export default function submit(){
             transition:all 0.5s;
         }
         :hover{
-            background:var(--colorWhite);
-            color:var(--colorBlack);
+            background:var(--colorBlack);
         }`
 
     const submit = cE("button", style)

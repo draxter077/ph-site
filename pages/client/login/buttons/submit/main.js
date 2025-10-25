@@ -40,7 +40,7 @@ export default function submit(){
             async function inputError(ipt){
                 ipt.style.borderBottom = "1px solid red"
                 await new Promise(resolve => setTimeout(resolve, 550))
-                ipt.style.borderBottom = "1px solid var(--colorBlue);"
+                ipt.style.borderBottom = "1px solid var(--colorBlue)"
             }
             
             e.target.innerHTML = "<img style='height:100%;' src='https://portal.ufvjm.edu.br/a-universidade/cursos/grade_curricular_ckan_novo/loading.gif/@@images/image.gif'/>"

@@ -52,7 +52,7 @@ export default function button(data){
             }
             
             await axios.post(apiURL + "/admin/addClient", {name:name, domain:domain, email:email.toLowerCase()})
-                .then(r => {showWindow("Cliente salvo")})
+                .then(r => {showWindow("Cliente adicionado")})
                 .catch(r => {showWindow("Nossos servidores estão em atualização. Aguarde alguns minutos para tentar novamente")})
 
             e.target.disabled = false

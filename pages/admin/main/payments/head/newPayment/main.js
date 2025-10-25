@@ -4,6 +4,7 @@ export default function newPayment(){
     let style = `
         {
             font-size:18px;
+            height:32px;
             font-weight:900;
             text-wrap:nowrap;
             padding:5px 10px;
