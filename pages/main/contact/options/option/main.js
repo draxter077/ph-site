@@ -1,9 +1,7 @@
 import img from "./img/main.js"
 import text from "./text/main.js"
 
-import back from "./back/main.js"
-
-export default function option(src, t, disclaimer, f){
+export default function option(src, t, h){
     let style = `
         {
             position:relative;
@@ -27,31 +25,10 @@ export default function option(src, t, disclaimer, f){
             margin:0px 0px 10px 0px;
         }`
 
-    const option = cE("div", style)
+    const option = cE("a", style)
+    option.href = h
+    option.target = "_blank"
     option.appendChild(img(src))
     option.appendChild(text(t))
-    option.appendChild(back(disclaimer))
-
-    option.addEventListener(
-        "click",
-        async function a(){
-            if(option.style.transform == "rotate3d(0, 1, 0, 180deg)"){
-                option.style.transform = "rotate3d(0, 1, 0, 0deg)"
-                option.children[2].style.transform = "rotate3d(0, 1, 0, 180deg)"
-                option.children[2].style.opacity = 0
-            }
-            else{
-                option.style.transform = "rotate3d(0, 1, 0, 180deg)"
-                option.children[2].style.transform = "rotate3d(0, 1, 0, -180deg)"
-                option.children[2].style.opacity = 1
-                f()
-                await new Promise(resolve => setTimeout(resolve, 5000))
-                option.style.transform = "rotate3d(0, 1, 0, 0deg)"
-                option.children[2].style.transform = "rotate3d(0, 1, 0, 180deg)"
-                option.children[2].style.opacity = 0
-            }
-        }
-    )
-
     return(option)
 }

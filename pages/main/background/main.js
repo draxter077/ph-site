@@ -12,19 +12,9 @@ export default function background(){
             align-items:center;
             justify-content:space-evenly;
             width:100%;
-            height:100vh;
+            height:100svh;
             z-index:-1;
-            
-            animation-name:minimizing;
-            animation-direction:forwards;
-            animation-range-start:0%;
-            animation-range-end:50svh;
-            animation-timeline:scroll();
-            animation-duration:1ms;
-        }
-        @keyframes minimizing{
-            0%[transform:scale(1);opacity:1]
-            100%[transform:scale(0.75);opacity:0]
+            transition:all 0.5s;
         }
         :responsive{
             flex-direction:column;
@@ -33,5 +23,17 @@ export default function background(){
     const background = cE("div", style)
     background.appendChild(logo())
     background.appendChild(text())
+
+    window.addEventListener(
+        "scroll",
+        () => {
+            let viewport = window.innerHeight
+            let scrolled = window.scrollY
+            if(scrolled < viewport*0.5){
+                background.style.transform = `scale(${1 - (0.25*(scrolled/(viewport*0.5)))})`
+                background.style.opacity = 1 - (scrolled/(viewport*0.4))
+            }
+        }
+    )
     return(background)
 }
