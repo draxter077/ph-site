@@ -32,7 +32,7 @@ export default function button(p){
 
             await axios.post(`${apiURL}/client/newPayment`, {paymentID:p.id})
                 .then(async resposta => {
-                    const publicKey = "APP_USR-9b945fd8-fd9b-45d3-8fe9-a0221ffcba71";
+                    const publicKey = "APP_USR-0e1386f3-236b-4079-b2d0-64d6b01d46da";
                     const preferenceId = resposta.data.preferenceID;
                     const mp = new MercadoPago(publicKey);
                     const bricksBuilder = mp.bricks();
@@ -44,7 +44,7 @@ export default function button(p){
                         })
                     }
                     await renderWalletBrick(bricksBuilder)
-                    await new Promise(r => setTimeout(r, 500))
+                    await new Promise(r => setTimeout(r, 1000))
 
                     // use children[5] for testing
                     document.body.children[4].children[0].children[0].children[0].children[0].children[0].children[0].click()
